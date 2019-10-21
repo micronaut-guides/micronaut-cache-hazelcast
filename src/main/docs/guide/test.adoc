@@ -1,6 +1,6 @@
-We can verify that the cache works as expected with spock tests.
+We can verify that the cache works as expected with JUnit tests.
 
-For the test, we will create an embedded Hazelcast server at the beginning in the `setupSpec()` method. This create an instance
+For the test, we will create an embedded Hazelcast server at the beginning in the `setupSpec()` method. This creates an instance
 on the default port `5701`. Note in production it is more likely that a Hazelcast node cluster will be mounted on a separate server resource.
 In the `cleanupSpec()`, the instance is shutdown.
 
@@ -19,6 +19,6 @@ include::{sourceDir}/src/test/java/micronaut/cache/hazelcast/service/MessageServ
 <1> Embedded Hazelcast node cluster.
 <2> Shutdown the Hazelcast node cluster.
 
-For further testing of `@CachePut` and `@CacheInvalidate`, please see the `MessageServiceSpec` in the /complete project.
+For further testing of `@CachePut` and `@CacheInvalidate`, please see the `MessageServiceTests` in the /complete project.
 
 NOTE: To test the application use the `./gradlew test` command.

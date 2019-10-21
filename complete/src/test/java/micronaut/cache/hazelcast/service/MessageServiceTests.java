@@ -87,4 +87,21 @@ public class MessageServiceTests {
         assertEquals(message, "myMessage_FromInsideMethodInvalidateAndReturnMessage");
         assertEquals(messageService.getInvocationCounter(), 2);
     }
+
+    @Test
+    void testMethodCachePut() {
+        // when: 'called the first time'
+        String message = messageService.returnMessage(MESSAGE_TITLE);
+
+        // then: 'method runs by getting the counter increasing'
+        assertEquals(message, "myMessage_FromInsideMethodReturnMessage");
+        assertEquals(messageService.getInvocationCounter(), 1);
+
+        // when: 'call a different method with @CachePut'
+        message = messageService.putReturnMessage(MESSAGE_TITLE);
+
+        // then: 'method is invoked because cache it will put a new entry'
+        assertEquals(message, "myMessage_FromInsideMethodPutAndReturnMessage");
+        assertEquals(messageService.getInvocationCounter(), 2);
+    }
 }
