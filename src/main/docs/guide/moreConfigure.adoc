@@ -16,10 +16,10 @@ and add to the bean.
 
 The settings will be used by Micronaut when creating the Hazelcast client. These will override configuration placed in the `application.yml`.
 
-[source, groovy]
-.src/main/groovy/micronaut/cache/hazelcast/groovy/service/HazelcastCacheAdditionalSettings.groovy
+[source, java]
+.src/main/java/micronaut/cache/hazelcast/service/HazelcastCacheAdditionalSettings.java
 ----
-include::{sourceDir}/src/main/groovy/micronaut/cache/hazelcast/groovy/service/HazelcastCacheAdditionalSettings.groovy[]
+include::{sourceDir}/src/main/java/micronaut/cache/hazelcast/service/HazelcastCacheAdditionalSettings.java[]
 ----
 
 <1> Implement BeanCreatedEventListener to trigger on creation

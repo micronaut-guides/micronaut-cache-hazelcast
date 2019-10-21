@@ -1,3 +1,14 @@
 micronaut:
   application:
     name: micronaut-cache-hazelcast
+---
+# tag::moreConfig[]
+# tag::config[]
+hazelcast:
+  instanceName: "my-cache"
+  network:
+    addresses: ['127.0.0.1:5701']
+# end::config[]
+    connectionTimeout: 9999 // <1>
+    redoOperation: true // <1>
+# end::moreConfig[]

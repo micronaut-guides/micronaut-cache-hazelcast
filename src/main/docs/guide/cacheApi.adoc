@@ -4,10 +4,10 @@ When Hazelcast references a previously cached value the method is not invoked an
 
 It is important to note that the key will be the method parameter, and the return value the value in the cache.
 
-[source, groovy]
-.src/main/groovy/micronaut/cache/hazelcast/groovy/service/MessageService.groovy
+[source, java]
+.src/main/java/micronaut/cache/hazelcast/service/MessageService.java
 ----
-include::{sourceDir}/src/main/groovy/micronaut/cache/hazelcast/groovy/service/MessageService.groovy[]
+include::{sourceDir}/src/main/java/micronaut/cache/hazelcast/service/MessageService.java[]
 ----
 
 <1> Cache the return value
