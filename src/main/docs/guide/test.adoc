@@ -10,9 +10,9 @@ When called a second time, the counter is not increased because the cached value
 The comments in the test below describe the intent and expectations.
 
 [source, java]
-.src/test/java/micronaut/cache/hazelcast/service/MessageServiceSpec.java
+.src/test/java/micronaut/cache/hazelcast/service/MessageServiceTests.java
 ----
-include::{sourceDir}/src/test/java/micronaut/cache/hazelcast/service/MessageServiceSpec.java[tag=test]
+include::{sourceDir}/src/test/java/micronaut/cache/hazelcast/service/MessageServiceTests.java[tag=test]
 }
 ----
 
