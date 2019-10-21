@@ -1,31 +1,39 @@
-package micronaut.cache.hazelcast.service
+package micronaut.cache.hazelcast.service;
 
-import io.micronaut.cache.annotation.CacheInvalidate
-import io.micronaut.cache.annotation.CachePut
-import io.micronaut.cache.annotation.Cacheable
+import io.micronaut.cache.annotation.CacheInvalidate;
+import io.micronaut.cache.annotation.CachePut;
+import io.micronaut.cache.annotation.Cacheable;
 
-import javax.inject.Singleton
+import javax.inject.Singleton;
 
 @Singleton
-class MessageService {
+public class MessageService {
 
-    int invocationCounter = 0
+    private int invocationCounter = 0;
 
     @Cacheable("my-cache") // <1>
-    String returnMessage(String message) {
-        ++invocationCounter
-        message+"_FromInsideMethodReturnMessage"
+    public String returnMessage(String message) {
+        ++invocationCounter;
+        return message+"_FromInsideMethodReturnMessage";
     }
 
     @CacheInvalidate(value="my-cache", all=true) // <2>
-    String invalidateAndReturnMessage(String message) {
-        ++invocationCounter
-        message+"_FromInsideMethodInvalidateAndReturnMessage"
+    public String invalidateAndReturnMessage(String message) {
+        ++invocationCounter;
+        return message+"_FromInsideMethodInvalidateAndReturnMessage";
     }
 
     @CachePut("my-cache") // <3>
-    String putReturnMessage(String message) {
-        ++invocationCounter
-        message+"_FromInsideMethodPutAndReturnMessage"
+    public String putReturnMessage(String message) {
+        ++invocationCounter;
+        return message+"_FromInsideMethodPutAndReturnMessage";
+    }
+
+    public int getInvocationCounter() {
+        return invocationCounter;
+    }
+
+    public void setInvocationCounter(int invocationCounter) {
+        this.invocationCounter = invocationCounter;
     }
 }
