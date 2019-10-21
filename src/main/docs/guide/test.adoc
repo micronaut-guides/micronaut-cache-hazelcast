@@ -1,0 +1,24 @@
+We can verify that the cache works as expected with spock tests.
+
+For the test, we will create an embedded Hazelcast server at the beginning in the `setupSpec()` method. This create an instance
+on the default port `5701`. Note in production it is more likely that a Hazelcast node cluster will be mounted on a separate server resource.
+In the `cleanupSpec()`, the instance is shutdown.
+
+The test will execute by passing an initial value into the `returnMessage(String message)` method. The method will execute and initialize the cache.
+When called a second time, the counter is not increased because the cached values are retrieved.
+
+The comments in the test below describe the intent and expectations.
+
+[source, groovy]
+.src/test/groovy/micronaut/cache/hazelcast/groovy/service/MessageServiceSpec.groovy
+----
+include::{sourceDir}/src/test/groovy/micronaut/cache/hazelcast/groovy/service/MessageServiceSpec.groovy[tag=test]
+}
+----
+
+<1> Embedded Hazelcast node cluster.
+<2> Shutdown the Hazelcast node cluster.
+
+For further testing of `@CachePut` and `@CacheInvalidate`, please see the `MessageServiceSpec` in the /complete project.
+
+NOTE: To test the application use the `./gradlew test` command.

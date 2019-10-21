@@ -1,1 +1,6 @@
-In this guide you are going to...
+In this guide you are going to integrate a Micronaut application with https://hazelcast.org/[Hazelcast]. Hazelcast is an open
+source in-memory data grid based on Java. Hazelcast provides central, predictable scaling of applications through in-memory access
+to frequently used data and across an elastically scalable data grid. Micronaut is easily integratable with Hazelcast as a cache
+mechanism.
+
+Micronaut will be a client to the Hazelcast node cluster.

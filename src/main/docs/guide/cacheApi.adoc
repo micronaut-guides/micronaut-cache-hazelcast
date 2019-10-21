@@ -1,0 +1,16 @@
+Let's create a service which has some methods that need to be cached. The service will simply count how many time the methods are invoked
+and it will return a message. When Hazelcast places a new value in the cache, the counter will be incremented.
+When Hazelcast references a previously cached value the method is not invoked and the value is retrieved from the cache on the Hazelcast cluster.
+
+It is important to note that the key will be the method parameter, and the return value the value in the cache.
+
+[source, groovy]
+.src/main/groovy/micronaut/cache/hazelcast/groovy/service/MessageService.groovy
+----
+include::{sourceDir}/src/main/groovy/micronaut/cache/hazelcast/groovy/service/MessageService.groovy[]
+----
+
+<1> Cache the return value
+<2> Invalidate all members of the cache before placing the new value
+<3> Always execute this method and update the cache with the return value. Generally use this annotation when stale data
+is to be updated, without blowing away the whole cache.

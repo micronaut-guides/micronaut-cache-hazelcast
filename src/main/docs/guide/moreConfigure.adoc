@@ -1,0 +1,27 @@
+Micronaut allows configuration of the Hazelcast client directly in `application.xml`. For example, we can add to the Hazelcast configuration
+by adding two more properties. Under the hood, Micronaut is taking the configuration and using the builder pattern to set
+the properties on this object: https://docs.hazelcast.org/docs/latest/javadoc/com/hazelcast/client/config/ClientNetworkConfig.html[ClientNetworkConfig.java]
+
+[source, yml]
+.src/main/resources/application.yml
+----
+include::{sourceDir}/src/main/resources/application.yml[tag=moreConfig]
+----
+
+<1> Added properties to the Hazelcast Client
+
+Due to the nested objects necessary to configure the Hazelcast client, a preferred way to set configuration is to do it
+programmatically in Micronaut. We can tune into the `BeanCreatedEventListener` of the Micronaut `HazelcastClientConfiguration` class
+and add to the bean.
+
+The settings will be used by Micronaut when creating the Hazelcast client. These will override configuration placed in the `application.yml`.
+
+[source, groovy]
+.src/main/groovy/micronaut/cache/hazelcast/groovy/service/HazelcastCacheAdditionalSettings.groovy
+----
+include::{sourceDir}/src/main/groovy/micronaut/cache/hazelcast/groovy/service/HazelcastCacheAdditionalSettings.groovy[]
+----
+
+<1> Implement BeanCreatedEventListener to trigger on creation
+<2> Retrieve the bean from the event
+<3> Set any property needed

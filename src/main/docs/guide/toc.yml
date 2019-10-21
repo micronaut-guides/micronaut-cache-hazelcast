@@ -4,5 +4,11 @@ gettingStarted:
   howto: How to complete the guide
 writingTheApp:
   title: Writing the Application
-runningTheApp:
-  title: Running the Application
+  configure: Configure the Application
+cacheApi:
+  title: Micronaut Cache Api
+test:
+  title: Test the Cache
+moreConfigure:
+  title: More Hazelcast Configuration
+next: Where To Go From Here?

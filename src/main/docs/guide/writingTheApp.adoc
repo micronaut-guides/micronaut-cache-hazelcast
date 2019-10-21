@@ -1,1 +1,2 @@
-TODO: Complete the guide
+The app was created with Micronaut CLI using the `mn create-app` command. The `/initial` folder was created as such so you as a developer
+can follow along with the coding steps.
