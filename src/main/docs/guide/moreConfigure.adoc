@@ -10,7 +10,7 @@ include::{sourceDir}/src/main/resources/application.yml[tag=moreConfig]
 
 <1> Added properties to the Hazelcast Client
 
-Due to the nested objects necessary to configure the Hazelcast client, a preferred way to set configuration is to do it
+Due to the nested objects necessary to configure the Hazelcast client, another way to set configuration is to do it
 programmatically in Micronaut. We can tune into the `BeanCreatedEventListener` of the Micronaut `HazelcastClientConfiguration` class
 and add to the bean.
 

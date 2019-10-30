@@ -6,7 +6,7 @@ Let's configure the application to be a client to a Hazelcast cache server. Go t
 include::{sourceDir}/build.gradle[tag=build]
 ----
 
-Simple add configuration below to name the cache, as well as provide the addresses. This is the minimal configuration
+Simply add configuration below to name the cache, as well as provide the addresses. This is the minimal configuration
 needed to get started.
 
 [source, yml]
@@ -17,7 +17,7 @@ include::{sourceDir}/src/main/resources/application.yml[tag=config]
 
 [NOTE]
 ====
-Alternatively, a Micronaut application can be created with the https://docs.micronaut.io/latest/guide/index.html#quickStart[CLI] using the `--feature hazelcast` flag. Create the application with the command
+Alternatively, a Micronaut application can be created with the https://docs.micronaut.io/latest/guide/index.html#quickStart[CLI] using the `--features hazelcast` flag. Create the application with the command
 below. This will create a Micronaut application with the `build.gradle` and `application.yml` configured for Hazelcast.
 
 - `mn create-app testapp --features hazelcast`
