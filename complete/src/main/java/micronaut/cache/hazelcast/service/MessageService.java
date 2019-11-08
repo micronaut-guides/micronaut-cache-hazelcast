@@ -14,19 +14,19 @@ public class MessageService {
     @Cacheable("my-cache") // <1>
     public String returnMessage(String message) {
         ++invocationCounter;
-        return message+"_FromInsideMethodReturnMessage";
+        return message + "_FromInsideMethodReturnMessage";
     }
 
-    @CacheInvalidate(value="my-cache", all=true) // <2>
+    @CacheInvalidate(value = "my-cache", all = true) // <2>
     public String invalidateAndReturnMessage(String message) {
         ++invocationCounter;
-        return message+"_FromInsideMethodInvalidateAndReturnMessage";
+        return message + "_FromInsideMethodInvalidateAndReturnMessage";
     }
 
     @CachePut("my-cache") // <3>
     public String putReturnMessage(String message) {
         ++invocationCounter;
-        return message+"_FromInsideMethodPutAndReturnMessage";
+        return message + "_FromInsideMethodPutAndReturnMessage";
     }
 
     public int getInvocationCounter() {
