@@ -3,7 +3,7 @@ Let's configure the application to be a client to a Hazelcast cache server. Go t
 [source, java]
 .build.gradle
 ----
-include::{sourceDir}/build.gradle[tag=build]
+include::{sourceDir}/build.gradle[tag=build,indent=0]
 ----
 
 Simply add configuration below to name the cache, as well as provide the addresses. This is the minimal configuration
