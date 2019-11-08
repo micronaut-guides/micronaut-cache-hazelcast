@@ -4,13 +4,13 @@ plugins {
     id "application"
 }
 
-
-
 version "0.1"
 group "micronaut.cache.hazelcast"
 
 repositories {
     mavenCentral()
+    jcenter()
+    maven { url "https://oss.jfrog.org/oss-snapshot-local" }
     maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
 }
 
